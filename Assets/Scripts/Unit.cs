@@ -9,6 +9,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private Animator unitAnimator;
     private Vector3 targetPosition;
     private float moveSpeed = 4f;
+    private float rotateSpeed = 10f;
     private float stoppingDistance = .1f;
 
     private void Update()
@@ -17,6 +18,7 @@ public class Unit : MonoBehaviour
         {
             Vector3 moveDirection = (targetPosition - transform.position).normalized;
             transform.position += moveDirection * moveSpeed * Time.deltaTime;
+            transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed);
             unitAnimator.SetBool("isWalking", true);
         }
         else
