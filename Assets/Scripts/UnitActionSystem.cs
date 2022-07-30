@@ -5,10 +5,22 @@ using UnityEngine;
 
 public class UnitActionSystem : MonoBehaviour
 {
+    public static UnitActionSystem Instance { get; private set; }
     public event EventHandler OnSelectedUnitChanged; 
     [SerializeField] private Unit selectedUnit;
     [SerializeField] private LayerMask unitsLayerMask;
-    
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.LogError("There's more than one UnitActionSystem! " + transform + " - " + Instance);
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
