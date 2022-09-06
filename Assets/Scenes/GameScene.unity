@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab556b7dd36644bf896c0d822db6c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridDebugObjectPrefab: {fileID: 0}
+  gridDebugObjectPrefab: {fileID: 7766857322858947030, guid: c68e6fd3c910e4aa1a05d9a5e2532a61,
+    type: 3}
 --- !u!4 &48361886
 Transform:
   m_ObjectHideFlags: 0
@@ -197,8 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b23f153e9dc649b08c8a1a1223deff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridDebugObjectPrefab: {fileID: 7766857322858947030, guid: c68e6fd3c910e4aa1a05d9a5e2532a61,
-    type: 3}
 --- !u!4 &103429025
 Transform:
   m_ObjectHideFlags: 0
