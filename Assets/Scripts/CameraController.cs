@@ -56,9 +56,7 @@ public class CameraController : MonoBehaviour
 
         float rotationSpeed = 100f;
         transform.eulerAngles += rotationVector * rotationSpeed * Time.deltaTime;
-
         
-        Vector3 followOffset = cinemachineTransposer.m_FollowOffset;
         float zoomAmount = 1f;
         if (Input.GetKey(KeyCode.F))
         {
@@ -70,8 +68,7 @@ public class CameraController : MonoBehaviour
             targetFollowOffset.y += zoomAmount;
         }
 
-        targetFollowOffset.y = Mathf.Clamp(followOffset.y, MIN_FOLLOW_Y_OFFSET, MAX_FOLLOW_Y_OFFSET);
-        Mathf.Lerp(cinemachineTransposer.m_FollowOffset.y, followOffset.y, 3f);
+        targetFollowOffset.y = Mathf.Clamp(targetFollowOffset.y, MIN_FOLLOW_Y_OFFSET, MAX_FOLLOW_Y_OFFSET);
         cinemachineTransposer.m_FollowOffset = Vector3.Lerp(
             cinemachineTransposer.m_FollowOffset,
             targetFollowOffset,
